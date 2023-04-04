@@ -205,7 +205,7 @@ Es importante que el nombre de la plantilla o vista, termine en `.blade.php` por
 
 #### Crear parámetros para plantillas
 
-```blade
+```php
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -222,7 +222,7 @@ Es importante que el nombre de la plantilla o vista, termine en `.blade.php` por
 
 #### Extender plantilla e inicializar parámetros yield
 
-```blade
+```php
 @extends('layouts.plantilla')
 
 @section('title','Página de inicio')
