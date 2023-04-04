@@ -38,7 +38,7 @@ El comando `laravel new example-app` es una opción más rápida y sencilla, ya 
 
 ### Rutas
 
-Retornar cadenas
+#### Retornar cadenas
 
 ```php
 Route::get('/', function () {
@@ -75,6 +75,47 @@ Route::get('/cursos/{curso}/{categoria?}', function ($curso, $categoria = null) 
 ```
 
 El orden en el que se definen las rutas en Laravel es importante, especialmente cuando se usan rutas dinámicas con parámetros. Es necesario definir primero las rutas estáticas antes de las dinámicas para evitar que Laravel confunda una ruta estática con un parámetro de ruta.
+
+#### Retornar vistas
+
+```php
+Route::get('/', function () {
+  return view('home');
+});
+```
+
+#### Retornar vistas dentro de carpetas
+
+```php
+Route::get('/cursos', function () {
+  return view('cursos.index');
+});
+```
+
+#### Retornar vistas dentro de carpetas
+
+```php
+Route::get('/cursos', function () {
+  return view('cursos.index');
+});
+```
+
+#### Retornar vistas con parámetros
+
+```php
+Route::get('/cursos/{curso}', function ($curso) {
+  return view('cursos.show', ['curso' => $curso]);
+});
+```
+
+Otra forma de hacer esto sería:
+
+```php
+Route::get('/cursos/{curso}', function ($curso) {
+  return view('cursos.show', compact('curso'));
+});
+
+```
 
 #### Rutas con controlador
 
@@ -125,3 +166,29 @@ class HomeController extends Controller
   }
 }
 ```
+
+#### Renderizar vistas
+
+```php
+public function index()
+{
+  // Vista directa
+  return view('home');
+}
+
+public function index()
+{
+  // Vista dentro de carpeta
+  return view('cursos.index');
+}
+
+public function index($curso)
+{
+  // Vista con parámetro
+  return view('cursos.index', ['curso' => $curso]);
+  // ó
+  return view('cursos.index', compact('curso'));
+}
+```
+
+### Vistas
