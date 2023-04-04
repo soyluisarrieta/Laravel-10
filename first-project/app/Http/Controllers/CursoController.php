@@ -8,16 +8,16 @@ class CursoController extends Controller
 {
   public function index()
   {
-    return "Soy el index";
+    return view('cursos.index');
   }
 
   public function create()
   {
-    return "Soy el create";
+    return view('cursos.create');
   }
 
   public function show($curso)
   {
-    return "Soy el show con el parámetro: $curso";
+    return view('cursos.show');
   }
 }
