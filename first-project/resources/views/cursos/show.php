@@ -9,7 +9,7 @@
 </head>
 
 <body>
-
+  curso: <?php echo $curso; ?>
 </body>
 
 </html>
