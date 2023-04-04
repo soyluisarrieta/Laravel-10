@@ -15,7 +15,10 @@ use App\Http\Controllers\CursoController;
 |
 */
 
-Route::get('/', HomeController::class);
+
+Route::get('/', function () {
+  return view('home');
+});
 
 Route::controller(CursoController::class)->group(function () {
   Route::get('/cursos', 'index');
