@@ -192,3 +192,42 @@ public function index($curso)
 ```
 
 ### Vistas
+
+#### Imprimir parámetros recibidos
+
+```php
+<h1>Nombre del curso: <?php echo $curso ?></h1>
+```
+
+### Blade
+
+Es importante que el nombre de la plantilla o vista, termine en `.blade.php` por ejemplo `home.blade.php`
+
+#### Crear parámetros para plantillas
+
+```html+blade
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>@yield('title')</title>
+</head>
+<body>
+  @yield('content')
+</body>
+</html>
+```
+
+#### Extender plantilla e inicializar parámetros yield
+
+```html+blade
+@extends('layouts.plantilla')
+
+@section('title','Página de inicio')
+
+@section('content')
+  <h1>Bienvenido a la página principal</h1>
+@endsection
+```
