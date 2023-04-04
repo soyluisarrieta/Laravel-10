@@ -1,5 +1,4 @@
 # Mis apuntes
----
 
 ## Instalaciones previas
 
@@ -16,7 +15,6 @@
 
 
 ## Laravel
----
 
 ### Crear nuevo proyecto
 
@@ -30,7 +28,6 @@ Via Laravel primero se debe configurar el comando `laravel` para el proyecto
 composer global require laravel/installer
  
 laravel new example-app
-```
 
 El comando `laravel new example-app` es una opción más rápida y sencilla, ya que el instalador de Laravel utilizará Composer internamente para descargar e instalar Laravel y sus dependencias.
 
